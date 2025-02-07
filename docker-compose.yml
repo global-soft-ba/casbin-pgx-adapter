@@ -1,7 +1,7 @@
 services:
   postgres:
     container_name: postgres-for-casbin-pgx-adapter
-    image: postgres:latest
+    image: postgres:14
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres

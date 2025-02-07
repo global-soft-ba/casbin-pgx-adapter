@@ -1,6 +1,6 @@
 # PGX Adapter
 
-[![Tests](https://github.com/pckhoi/casbin-pgx-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/pckhoi/casbin-pgx-adapter/actions/workflows/ci.yml)
+[![Tests](https://github.com/pckhoi/casbin-pgx-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/global-soft-ba/casbin-pgx-adapter/actions/workflows/ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/pckhoi/casbin-pgx-adapter/badge.svg?branch=main)](https://coveralls.io/github/pckhoi/casbin-pgx-adapter?branch=main)
 
 PGX Adapter is the [pgx](https://github.com/jackc/pgx) adapter for [Casbin](https://github.com/casbin/casbin). With this library, Casbin can load policy from PostgreSQL or save policy to it.
