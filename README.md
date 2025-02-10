@@ -7,7 +7,7 @@ PGX Adapter is the [pgx](https://github.com/jackc/pgx) adapter for [Casbin](http
 
 ## Installation
 
-    go get github.com/pckhoi/casbin-pgx-adapter
+    go get global-soft-ba/casbin-pgx-adapter
 
 ## Simple Postgres Example
 
@@ -15,7 +15,7 @@ PGX Adapter is the [pgx](https://github.com/jackc/pgx) adapter for [Casbin](http
 package main
 
 import (
-	pgxadapter "github.com/pckhoi/casbin-pgx-adapter"
+	pgxadapter "github.com/global-soft-ba/casbin-pgx-adapter"
 	"github.com/casbin/casbin/v2"
 )
 
@@ -57,7 +57,7 @@ package main
 
 import (
 	"github.com/casbin/casbin/v2"
-	pgxadapter "github.com/pckhoi/casbin-pgx-adapter"
+	pgxadapter "github.com/global-soft-ba/casbin-pgx-adapter"
 )
 
 func main() {
@@ -81,8 +81,8 @@ package main
 
 import (
 	"github.com/casbin/casbin/v2"
-	pgxadapter "github.com/pckhoi/casbin-pgx-adapter"
-	"github.com/jackc/pgx/v4"
+	pgxadapter "github.com/global-soft-ba/casbin-pgx-adapter"
+	"github.com/jackc/pgx/v5"
 )
 
 func main() {
@@ -99,7 +99,20 @@ func main() {
 
 ## Run all tests
 
-    PG_CONN=postgresql://user:password@localhost:5432/testdb?sslmode=disable go test github.com/pckhoi/casbin-pgx-adapter -coverpkg=./...
+To run all tests, follow these steps:
+
+1. Ensure you have Docker and Docker Compose installed.
+2. Open a terminal and navigate to the root directory of the project.
+3. Run the following command:
+
+    ```sh
+    make all-for-tests
+    ```
+
+This command will:
+- Start the PostgreSQL container.
+- Run the tests.
+- Stop the PostgreSQL container.
 
 ## Getting Help
 

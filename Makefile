@@ -10,4 +10,7 @@ stop-postgres:
 
 # Run tests
 run-tests:
-	PG_CONN=postgresql://postgres:postgres@localhost:5435/postgres?sslmode=disable go test -v -count=1 ./...
+	PG_CONN=postgresql://postgres:postgres@localhost:5435/postgres?sslmode=disable go test -v -count=1 ./... -coverpkg=./...
+
+# Run all commands needed for tests in sequence
+all-for-tests: start-postgres run-tests stop-postgres
