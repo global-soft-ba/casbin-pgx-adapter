@@ -30,20 +30,3 @@ jobs:
         run: go test -v ./...
         env:
           PG_CONN: postgresql://postgres:postgres@127.0.0.1:5432/postgres?sslmode=disable
-
-  semantic-release:
-    needs: [test]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run semantic-release
-        if:
-          github.repository == 'global-soft-ba/casbin-pgx-adapter' && (github.event_name
-          == 'push' || (github.event_name == 'pull_request' &&
-          github.event.action == 'closed' && github.event.pull_request.merged ==
-          true))
-        run: |
-          npm install --save-dev semantic-release@17.2.4
-          npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
