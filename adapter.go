@@ -176,7 +176,8 @@ func policyArgs(ptype string, rule []string) []interface{} {
 			}
 		} else {
 			row[1+i] = pgtype.Text{
-				Valid: false,
+				String: "",
+				Valid:  true,
 			}
 		}
 	}
