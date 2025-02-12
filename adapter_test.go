@@ -131,7 +131,7 @@ func testCustomDatabaseAndTableName(t *testing.T, a *Adapter, e *casbin.Enforcer
 
 	var v0, v1, v2 string
 	policies := [][]string{}
-	rows, err := conn.Query(context.Background(), "SELECT v0, v1, v2 FROM test_casbin_rules WHERE p_type = $1", "p")
+	rows, err := conn.Query(context.Background(), "SELECT v0, v1, v2 FROM test_casbin_rules WHERE ptype = $1", "p")
 	require.NoError(t, err)
 	pgx.ForEachRow(rows, []interface{}{&v0, &v1, &v2}, func() error {
 		policies = append(policies, []string{v0, v1, v2})
@@ -492,8 +492,7 @@ func TestRejectCollidingTableName(t *testing.T) {
 	ctx := context.Background()
 	_, err = pool.Exec(ctx, `
 		CREATE TABLE test_casbin_rules (
-			id text PRIMARY KEY,
-			p_type text,
+			ptype text,
 			v0 text,
 			v1 text,
 			v2 text,
