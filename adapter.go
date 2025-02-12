@@ -471,13 +471,13 @@ func (a *Adapter) createTable() error {
 	defer cancel()
 	_, err := a.pool.Exec(ctx, fmt.Sprintf(`
 		CREATE TABLE IF NOT EXISTS %s (
-			ptype varchar(100),
-			v0 varchar(100),
-			v1 varchar(100),
-			v2 varchar(100),
-			v3 varchar(100),
-			v4 varchar(100),
-			v5 varchar(100)
+			ptype VARCHAR(100) NOT NULL DEFAULT '',
+			v0 VARCHAR(100) NOT NULL DEFAULT '',
+			v1 VARCHAR(100) NOT NULL DEFAULT '',
+			v2 VARCHAR(100) NOT NULL DEFAULT '',
+			v3 VARCHAR(100) NOT NULL DEFAULT '',
+			v4 VARCHAR(100) NOT NULL DEFAULT '',
+			v5 VARCHAR(100) NOT NULL DEFAULT ''
 		)
 	`, a.schemaTable()))
 	return err

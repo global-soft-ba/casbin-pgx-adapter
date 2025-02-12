@@ -492,13 +492,13 @@ func TestRejectCollidingTableName(t *testing.T) {
 	ctx := context.Background()
 	_, err = pool.Exec(ctx, `
 		CREATE TABLE test_casbin_rules (
-			ptype text,
-			v0 text,
-			v1 text,
-			v2 text,
-			v3 text,
-			v4 text,
-			v5 text
+			ptype VARCHAR(100) NOT NULL DEFAULT '',
+			v0 VARCHAR(100) NOT NULL DEFAULT '',
+			v1 VARCHAR(100) NOT NULL DEFAULT '',
+			v2 VARCHAR(100) NOT NULL DEFAULT '',
+			v3 VARCHAR(100) NOT NULL DEFAULT '',
+			v4 VARCHAR(100) NOT NULL DEFAULT '',
+			v5 VARCHAR(100) NOT NULL DEFAULT ''
 		)
 	`)
 	require.NoError(t, err)
